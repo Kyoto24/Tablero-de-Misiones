@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c130d; /* Fondo oscuro estilo taberna */
+    font-family: 'Georgia', serif;
+    padding: 20px;
+
+    /* Tu imagen de fondo */
+    background-image: url("Img/Fondo Gremio.jpg");
+    background-size: cover;       /* Hace que cubra toda la pantalla sin deformarse */
+    background-position: center;  /* La centra */
+    background-repeat: no-repeat; /* Evita que se repita como mosaico */
+    background-attachment: fixed; /* Mantiene el fondo quieto si haces scroll */
+}
+
+.madera-background {
+    width: 95%;
+    max-width: 1200px;
+    min-height: 82vh;
+    border-radius: 12px;
+    
+    /* Simulación de tablones de madera con CSS puro */
+    background-color: #7c4722;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.08) 0px,
+            rgba(0, 0, 0, 0.08) 2px,
+            transparent 2px,
+            transparent 120px
+        ),
+        linear-gradient(180deg, #8c5228 0%, #633617 100%);
+    
+    /* Marco grueso de madera oscura */
+    border: 14px solid #3e1f0d;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.7),
+        inset 0 0 30px rgba(0, 0, 0, 0.6); /* Sombra interior para profundidad */
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.madera-header {
+    padding: 20px 35px;
+    background-color: rgba(43, 21, 8, 0.65);
+    border-bottom: 4px solid #3e1f0d;
+    text-align: center;
+}
+
+#madera-title {
+    color: #f5deb3;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.8);
+}
+
+.madera-container {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+}
+
+.madera-box-title {
+    color: #f5deb3;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px dashed rgba(245, 222, 179, 0.3);
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.madera-content {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+/* Panel derecho donde se leerá la misión */
+.content-box {
+    width: 100%;
+    background: #fdf6e3;
+    color: #2c1a0e;
+    border: 2px solid #c2a675;
+    border-radius: 6px;
+    padding: 35px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    overflow-y: auto;
+}
+
+.placeholder-text {
+    color: #7a6248;
+    font-style: italic;
+    text-align: center;
+    margin-top: 40%;
+}

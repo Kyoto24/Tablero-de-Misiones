@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Misiones del Gremio</title>
+    <!-- Fuente Cinzel para la estética de gremio/expediente -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Tablero.CSS">
+    <link rel="stylesheet" href="Papeles.CSS">
+    <link rel="stylesheet" href="Modal.CSS">
+</head>
+<body>
+    
+    <div class="madera-background">
+        
+        <header class="madera-header">
+            <h2 id="madera-title">Tablero de Misiones</h2>
+        </header>
+
+        <div class="madera-container">
+            <div class="madera-box">
+                <div class="madera-box-header">
+                    <h3 class="madera-box-title">Encargos Disponibles</h3>
+                </div>
+
+                <div class="madera-box-content">
+                    <div class="Papeles-list" id="lista-papeles">
+                        <!-- Los papeles se generarán dinámicamente aquí -->
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+
+    <!-- Ventana emergente (adaptada de tu laritmia-modal) -->
+    <div class="mision-modal" id="mision-modal">
+        <div class="mision-paper">
+            <!-- Chincheta / Sello superior -->
+            <div class="mision-pin"></div>
+
+            <p class="mision-file" id="modal-codigo">ENCARGO Nº 0001</p>
+            <p class="mision-category" id="modal-rango">RANGO C</p>
+            
+            <h2 id="modal-title">Título de la Misión</h2>
+            
+            <div class="mision-line"></div>
+            
+            <p class="mision-description" id="modal-description">
+                Aquí aparecerá la descripción completa del encargo...
+            </p>
+
+            <div class="mision-footer-info">
+                <span id="modal-cliente">Cliente: Gremio</span>
+                <span id="modal-recompensa">Recompensa: 150 Oro</span>
+            </div>
+
+            <div class="mision-actions">
+                <button class="mision-close" id="btn-cerrar">Cerrar pergamino</button>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="misiones.js"></script>
+</body>
+</html>

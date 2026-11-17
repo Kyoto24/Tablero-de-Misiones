@@ -1,0 +1,65 @@
+.Papeles-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las hojas bajen si no caben */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px; /* Separa las hojas entre sí */
+    padding: 30px 10px;
+}
+
+.Papeles-list-item {
+    position: relative;
+    width: 180px;
+    height: 250px;
+    padding: 30px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Estética de pergamino */
+    background: #f5e6c8;
+    color: #3b2313;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    border: 1px solid #c9b082;
+    border-radius: 3px;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Chincheta / Clavo rojo en la parte superior */
+.Papeles-list-item::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 30% 30%, #ff4d4d, #990000);
+    border-radius: 50%;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
+}
+
+/* Inclinación ligera para que no se vean rígidos */
+.Papeles-list-item:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+.Papeles-list-item:nth-child(even) {
+    transform: rotate(2.5deg);
+}
+
+/* Efecto al pasar el mouse (se levanta el papel) */
+.Papeles-list-item:hover {
+    transform: scale(1.06) rotate(0deg);
+    box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.45);
+    z-index: 10;
+}
+
+.rango { 
+    font-size: 0.75rem; 
+    padding: 3px 8px; 
+    border-radius: 4px; 
+    background: #3b2313; 
+    color: #f5e6c8; 
+    margin-bottom: 12px; 
+}

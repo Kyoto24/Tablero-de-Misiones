@@ -1,0 +1,140 @@
+.mision-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s;
+    z-index: 100;
+}
+
+.mision-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mision-paper {
+    position: relative;
+    width: 680px;
+    max-width: 92%;
+    padding: 50px 55px;
+    background: #f8f3e6;
+    border: 1px solid #d4c29a;
+    border-radius: 6px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateY(-180px) rotate(-6deg) scale(0.90);
+}
+
+.mision-modal.active .mision-paper {
+    animation: paperDrop 0.55s cubic-bezier(0.20, 1.15, 0.35, 1) forwards;
+}
+
+/* Chincheta roja arriba del papel abierto */
+.mision-pin {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle at 30% 30%, #ff4d4d, #800000);
+    border-radius: 50%;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.mision-file {
+    text-align: center;
+    font-family: "Cinzel", serif;
+    letter-spacing: 5px;
+    font-size: 13px;
+    color: #777;
+}
+
+.mision-category {
+    margin-top: 25px;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    color: #6d0017;
+    font-size: 18px;
+}
+
+#modal-title {
+    margin-top: 10px;
+    font-size: 36px;
+    font-family: "Cinzel", serif;
+    color: #1d1d1d;
+}
+
+.mision-line {
+    height: 2px;
+    margin: 20px 0 28px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.mision-description {
+    font-family: "Georgia", serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #2f2f2f;
+    white-space: pre-line; /* Respeta los saltos de línea del texto */
+}
+
+.mision-footer-info {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    color: #4a2c11;
+    font-size: 15px;
+}
+
+.mision-actions {
+    margin-top: 35px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mision-close {
+    border: none;
+    background: none;
+    font-family: "Cinzel", serif;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    color: #8d001c;
+    transition: 0.2s;
+}
+
+.mision-close:hover {
+    transform: translateY(-2px);
+    text-shadow:
+        0 0 8px #ff3939e6,
+        0 0 18px rgba(255, 13, 50, 0.8),
+        0 0 35px rgba(195, 0, 10, 0.6);
+}
+
+@keyframes paperDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-180px) rotate(-6deg) scale(0.90);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(12px) rotate(1deg) scale(1);
+    }
+    85% {
+        transform: translateY(-4px) rotate(0.4deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(0.8deg) scale(1);
+    }
+}
